@@ -45,6 +45,8 @@ DSA_180_Days/
 
 🏆 LeetCode Progress
 
+DAY 1(problem statement)
+
 Problem| Topic| Difficulty| Status
 1768. Merge Strings Alternately| Strings| Easy| Accepted
 
@@ -69,3 +71,55 @@ Consistency over perfection.
 Every problem solved is another step towards becoming a better software engineer.
 
 180 Days. Consistent Learning. Better Problem Solving.
+
+DAY 2(problem statement)
+## DAY 2 – Problem Statement
+
+| Problem | Topic | Difficulty | Status |
+|---|---|---|---|
+| 1071. Greatest Common Divisor of Strings | Strings, Mathematics, GCD | Easy | Accepted |
+
+**Problem Link:** [LeetCode 1071 – Greatest Common Divisor of Strings](https://leetcode.com/problems/greatest-common-divisor-of-strings/)
+
+### Concepts Learned
+- Greatest Common Divisor (GCD).
+- String concatenation.
+- String length and prefix extraction.
+- C++ `substr()` function.
+- Pattern matching in strings.
+
+### My Approach
+1. Compare `str1 + str2` with `str2 + str1`.
+2. If they are different, return an empty string.
+3. Calculate the lengths of both strings.
+4. Find the GCD of the two lengths.
+5. Extract the prefix of length GCD from `str1`.
+6. Return the common repeating string.
+
+### Example
+
+**Input:**
+- str1 = "ABCABC"
+- str2 = "ABC"
+
+**Output:** "ABC"
+
+**Key Learning:**
+
+I learned how the mathematical concept of GCD can be applied to string problems. I also understood how string concatenation helps identify a common repeating pattern.
+
+### Complexity Analysis
+- Time Complexity: O(n + m)
+- Auxiliary Space: O(n + m) for concatenation.
+
+### My Learning Reflection
+
+Today, I improved my understanding of string manipulation and mathematical problem-solving. I learned to connect string patterns with the GCD concept and implement the solution using C++.
+
+### Progress
+- Problems completed today: 1
+- Total problems completed: 2
+- Language: C++
+- Platform: LeetCode
+
+**Consistency over perfection. One problem at a time!**

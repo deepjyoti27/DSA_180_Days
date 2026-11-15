@@ -123,3 +123,78 @@ Today, I improved my understanding of string manipulation and mathematical probl
 - Platform: LeetCode
 
 **Consistency over perfection. One problem at a time!**
+
+
+## 📅 DAY 3 – Kids With the Greatest Number of Candies
+
+### 📝 Problem Details
+
+| Problem | Topic | Difficulty | Status |
+|---|---|---|---|
+| 1431. Kids With the Greatest Number of Candies | Arrays | Easy | Accepted |
+
+**LeetCode:** [1431 – Kids With the Greatest Number of Candies](https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/)
+
+### 🎯 Problem Understanding
+
+Given an integer array `candies`, where each element represents the number of candies a child has, and an integer `extraCandies`.
+
+For each child, determine whether giving them all the extra candies would make their total greater than or equal to the maximum number of candies currently held by any child.
+
+### 🧠 Approach & Logic
+
+1. Initialize a variable `maxCandies` with 0.
+2. Traverse the array to find the maximum number of candies.
+3. Create a Boolean vector named `result`.
+4. Traverse the array again.
+5. Check whether `candies[i] + extraCandies >= maxCandies`.
+6. If the condition is true, insert `true` into the result vector.
+7. Otherwise, insert `false`.
+8. Return the result vector.
+
+### 💡 Key Concepts Learned
+
+- Array traversal using loops.
+- Finding the maximum element.
+- Conditional statements (`if-else`).
+- Boolean vectors (`vector<bool>`).
+- `push_back()` function.
+- Comparing values using the `>=` operator.
+
+### 🔍 Example
+
+**Input:**
+- candies = [2, 3, 5, 1, 3]
+- extraCandies = 3
+
+**Output:**
+
+`[true, true, true, false, true]`
+
+### ⏱️ Complexity Analysis
+
+- **Time Complexity:** O(n)
+  - First traversal finds the maximum element.
+  - Second traversal checks every child.
+- **Space Complexity:** O(n)
+  - The result vector stores n Boolean values.
+
+### 📚 My Learning & Takeaways
+
+- Learned how to find the maximum element in an array.
+- Understood how to use two separate traversals to solve a problem.
+- Improved my understanding of Boolean conditions.
+- Practiced storing results using a vector.
+- Learned why we use `>=` instead of `>` when equal maximum values are allowed.
+
+### 📊 Progress Tracker
+
+- Problems completed today: 1
+- Total problems completed: 3
+- Day 1: Merge Strings Alternately – Accepted
+- Day 2: Greatest Common Divisor of Strings – Accepted
+- Day 3: Kids With the Greatest Number of Candies – Accepted
+- Language: C++
+- Platform: LeetCode
+
+**Consistency over perfection. Small improvements every day lead to big achievements!** 🚀

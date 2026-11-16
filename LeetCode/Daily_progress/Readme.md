@@ -198,3 +198,68 @@ For each child, determine whether giving them all the extra candies would make t
 - Platform: LeetCode
 
 **Consistency over perfection. Small improvements every day lead to big achievements!** 🚀
+
+
+Day 4 – Can Place Flowers 🌱
+
+Problem Details
+
+- Platform: LeetCode
+- Problem Number: 605
+- Problem Name: Can Place Flowers
+- Difficulty: Easy
+- Topic: Arrays, Greedy
+- Language: C++
+
+Problem Link
+
+"LeetCode – Can Place Flowers" (https://leetcode.com/problems/can-place-flowers/)
+
+Problem Understanding
+
+Given a flowerbed represented by an array:
+
+- "0" represents an empty plot.
+- "1" represents a plot that already contains a flower.
+
+We need to determine whether "n" new flowers can be planted without placing flowers in adjacent plots.
+
+Approach: Greedy Algorithm
+
+1. Traverse the flowerbed using a loop.
+2. Check whether the current position is empty.
+3. Check whether the left neighbour is empty or the current position is the first index.
+4. Check whether the right neighbour is empty or the current position is the last index.
+5. If all conditions are satisfied, plant a flower by updating the current position to "1".
+6. Increase the flower count.
+7. Return "true" if the required number of flowers has been planted; otherwise, return "false".
+
+Important Concepts Learned
+
+- Array traversal
+- Greedy algorithm
+- Accessing neighbouring elements
+- Boundary conditions
+- Logical AND ("&&") and OR ("||")
+- Updating array elements
+- Time and space complexity
+
+Complexity Analysis
+
+- Time Complexity: O(m), where m is the length of the flowerbed.
+- Auxiliary Space Complexity: O(1), because only a constant number of extra variables are used.
+
+Key Learning
+
+Today I learned how to solve an array problem using a greedy approach. I understood how to check neighbouring elements, handle boundary conditions, and update an array while traversing it.
+
+180-Day Challenge Progress
+
+- Day 1: Merge Strings Alternately
+- Day 2: Greatest Common Divisor of Strings
+- Day 3: Kids With the Greatest Number of Candies
+- Day 4: Can Place Flowers
+
+Progress: 4 / 180 Days Completed 🚀
+
+Consistency, logic building, and problem-solving — one day at a time.

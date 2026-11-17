@@ -263,3 +263,91 @@ Today I learned how to solve an array problem using a greedy approach. I underst
 Progress: 4 / 180 Days Completed 🚀
 
 Consistency, logic building, and problem-solving — one day at a time.
+
+
+
+Day 5 – Reverse Vowels of a String
+
+Problem Details
+
+- Platform: LeetCode
+- Problem Number: 345
+- Problem Name: Reverse Vowels of a String
+- Difficulty: Easy
+- Topics: Strings, Two Pointers
+- Language: C++
+
+Problem Link
+
+"LeetCode – Reverse Vowels of a String" (https://leetcode.com/problems/reverse-vowels-of-a-string/)
+
+Problem Understanding
+
+Given a string "s", reverse only its vowels while keeping all consonants and other characters in their original positions.
+
+The vowels include:
+
+- Lowercase: a, e, i, o, u
+- Uppercase: A, E, I, O, U
+
+Approach: Two Pointers
+
+I used the Two Pointers technique to reverse the vowels efficiently.
+
+1. Create an "isVowel()" function to identify vowels.
+2. Initialise "left" at the beginning of the string.
+3. Initialise "right" at the end of the string.
+4. Move the left pointer forward until it finds a vowel.
+5. Move the right pointer backward until it finds a vowel.
+6. Swap the two vowels.
+7. Move both pointers towards the centre.
+8. Repeat until the pointers meet or cross.
+9. Return the modified string.
+
+Example
+
+Input:
+
+s = "IceCreAm"
+
+Output:
+
+"AceCreIm"
+
+The vowels "I, e, e, A" become "A, e, e, I", while the consonants remain in their original positions.
+
+Important Concepts Learned
+
+- Two Pointers technique
+- String traversal
+- Character comparison
+- Vowel identification
+- "while" loops
+- Logical operators ("&&", "||", "!")
+- "swap()" function
+- Working with string indices
+
+Complexity Analysis
+
+- Time Complexity: O(m), where m is the length of the string.
+- Auxiliary Space Complexity: O(1), excluding the input string copy.
+
+Key Learning
+
+Today I learned how to use the Two Pointers technique to process a string from both ends.
+
+I understood how to skip unwanted characters, identify valid characters, swap them, and move both pointers towards the centre.
+
+This problem improved my understanding of string manipulation and efficient pointer movement.
+
+180-Day DSA Challenge Progress
+
+- Day 1: Merge Strings Alternately
+- Day 2: Greatest Common Divisor of Strings
+- Day 3: Kids With the Greatest Number of Candies
+- Day 4: Can Place Flowers
+- Day 5: Reverse Vowels of a String
+
+Progress: 5 / 180 Days Completed 🚀
+
+Consistency over perfection. Building logic one problem at a time.

@@ -351,3 +351,96 @@ This problem improved my understanding of string manipulation and efficient poin
 Progress: 5 / 180 Days Completed 🚀
 
 Consistency over perfection. Building logic one problem at a time.
+
+
+
+Day 6 – Reverse Words in a String
+
+Problem Details
+
+- Platform: LeetCode
+- Problem Number: 151
+- Problem Name: Reverse Words in a String
+- Difficulty: Medium
+- Topics: Strings, String Manipulation
+- Language: C++
+
+Problem Link
+
+"LeetCode – Reverse Words in a String" (https://leetcode.com/problems/reverse-words-in-a-string/)
+
+Problem Understanding
+
+Given a string containing words separated by spaces, reverse the order of the words.
+
+The final string must:
+
+- Have exactly one space between words.
+- Have no leading spaces.
+- Have no trailing spaces.
+- Preserve the original spelling of each word.
+
+Approach: Stringstream + Vector
+
+1. Create a "stringstream" using the input string.
+2. Extract individual words using "ss >> word".
+3. Store each extracted word in a vector using "push_back()".
+4. Reverse the vector using "reverse()".
+5. Create an empty result string.
+6. Append each word to the result.
+7. Add a space before every word except the first.
+8. Return the final string.
+
+Example
+
+Input:
+
+"  hello   world  "
+
+Extracted words:
+
+["hello", "world"]
+
+After reversing:
+
+["world", "hello"]
+
+Output:
+
+"world hello"
+
+Important Concepts Learned
+
+- String manipulation
+- Stringstream
+- Vector of strings
+- Word extraction
+- "push_back()"
+- "reverse()" function
+- String concatenation
+- Handling extra spaces
+- Time and space complexity
+
+Complexity Analysis
+
+- Time Complexity: O(n), where n is the input string length.
+- Auxiliary Space Complexity: O(n), for storing the extracted words and constructing the result.
+
+Key Learning
+
+Today I learned how to extract individual words from a sentence, handle multiple spaces, reverse the order of words, and construct a clean output string.
+
+I also understood how "stringstream", vectors, and the STL "reverse()" function work together to solve string manipulation problems efficiently.
+
+180-Day DSA Challenge Progress
+
+- Day 1: Merge Strings Alternately
+- Day 2: Greatest Common Divisor of Strings
+- Day 3: Kids With the Greatest Number of Candies
+- Day 4: Can Place Flowers
+- Day 5: Reverse Vowels of a String
+- Day 6: Reverse Words in a String
+
+Progress: 6 / 180 Days Completed 🚀
+
+Learning consistently, improving logical thinking, and becoming a better problem solver.

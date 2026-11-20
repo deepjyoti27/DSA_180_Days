@@ -444,3 +444,109 @@ I also understood how "stringstream", vectors, and the STL "reverse()" function 
 Progress: 6 / 180 Days Completed 🚀
 
 Learning consistently, improving logical thinking, and becoming a better problem solver.
+\
+
+
+Day 7 – Product of Array Except Self
+
+Problem Details
+
+- Platform: LeetCode
+- Problem Number: 238
+- Problem Name: Product of Array Except Self
+- Difficulty: Medium
+- Topics: Arrays, Prefix Product, Suffix Product
+- Language: C++
+
+Problem Link
+
+"LeetCode – Product of Array Except Self" (https://leetcode.com/problems/product-of-array-except-self/)
+
+Problem Understanding
+
+Given an integer array "nums", return an array "answer" where each element contains the product of all elements in the original array except the element at the same index.
+
+The solution must:
+
+- Run in O(n) time.
+- Not use division.
+- Use O(1) auxiliary space, excluding the output array.
+
+Approach: Prefix Product and Suffix Product
+
+I solved this problem using two traversals.
+
+First Pass – Prefix Product
+
+1. Create an answer array initialised with 1.
+2. Initialise a variable "prefix = 1".
+3. Traverse the array from left to right.
+4. Store the current prefix product in "answer[i]".
+5. Multiply prefix by the current array element.
+
+Second Pass – Suffix Product
+
+1. Initialise a variable "suffix = 1".
+2. Traverse the array from right to left.
+3. Multiply "answer[i]" by the current suffix product.
+4. Update suffix by multiplying it with "nums[i]".
+
+The final answer contains the product of all elements except the current element.
+
+Example
+
+Input:
+
+nums = [1, 2, 3, 4]
+
+Prefix products:
+
+[1, 1, 2, 6]
+
+Suffix products:
+
+[24, 12, 4, 1]
+
+Output:
+
+[24, 12, 8, 6]
+
+Important Concepts Learned
+
+- Array traversal
+- Prefix product
+- Suffix product
+- Left-to-right traversal
+- Right-to-left traversal
+- Space optimisation
+- Handling zero values
+- Avoiding division
+- Time and space complexity
+
+Complexity Analysis
+
+- Time Complexity: O(n), because the array is traversed twice.
+- Auxiliary Space Complexity: O(1), excluding the output array.
+
+Key Learning
+
+Today I learned how prefix and suffix products work together to solve an array problem efficiently.
+
+I understood how to calculate products from both directions without using division or an additional prefix/suffix array.
+
+This problem improved my understanding of array traversal, mathematical logic, and space optimisation.
+
+180-Day DSA Challenge Progress
+
+- Day 1: Merge Strings Alternately
+- Day 2: Greatest Common Divisor of Strings
+- Day 3: Kids With the Greatest Number of Candies
+- Day 4: Can Place Flowers
+- Day 5: Reverse Vowels of a String
+- Day 6: Reverse Words in a String
+- Day 7: Product of Array Except Self
+
+Progress: 7 / 180 Days Completed 🚀
+
+Building strong fundamentals through consistent practice.
+

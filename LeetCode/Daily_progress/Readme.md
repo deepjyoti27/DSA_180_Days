@@ -550,3 +550,85 @@ Progress: 7 / 180 Days Completed 🚀
 
 Building strong fundamentals through consistent practice.
 
+Day 8 – Increasing Triplet Subsequence
+
+Problem Details
+
+- Platform: LeetCode
+- Problem Number: 334
+- Problem Name: Increasing Triplet Subsequence
+- Difficulty: Medium
+- Topics: Arrays, Greedy
+- Language: C++
+
+Problem Link
+
+"LeetCode – Increasing Triplet Subsequence" (https://leetcode.com/problems/increasing-triplet-subsequence/)
+
+Problem Understanding
+
+Given an integer array, determine whether there are three indices i, j, and k such that:
+
+- i < j < k
+- nums[i] < nums[j] < nums[k]
+
+Return true if an increasing triplet exists; otherwise, return false.
+
+Approach: Greedy Algorithm
+
+1. Initialise two variables, "first" and "second", with "INT_MAX".
+2. Traverse the array from left to right.
+3. If the current element is less than or equal to "first", update "first".
+4. Otherwise, if it is less than or equal to "second", update "second".
+5. Otherwise, an increasing triplet has been found, so return true.
+6. If traversal finishes without finding a triplet, return false.
+
+Example
+
+Input:
+
+[2, 1, 5, 0, 4, 6]
+
+Increasing triplet:
+
+0 < 4 < 6
+
+Output:
+
+true
+
+Important Concepts Learned
+
+- Array traversal
+- Greedy algorithm
+- Maintaining two minimum values
+- Conditional statements
+- Strictly increasing subsequences
+- INT_MAX
+- Optimised problem solving
+
+Complexity Analysis
+
+- Time Complexity: O(n), because the array is traversed once.
+- Auxiliary Space Complexity: O(1), because only two variables are maintained.
+
+Key Learning
+
+Today I learned how to identify an increasing triplet subsequence using a greedy approach.
+
+I understood how maintaining two minimum values helps identify a valid increasing sequence without using nested loops or additional arrays.
+
+180-Day DSA Challenge Progress
+
+- Day 1: Merge Strings Alternately
+- Day 2: Greatest Common Divisor of Strings
+- Day 3: Kids With the Greatest Number of Candies
+- Day 4: Can Place Flowers
+- Day 5: Reverse Vowels of a String
+- Day 6: Reverse Words in a String
+- Day 7: Product of Array Except Self
+- Day 8: Increasing Triplet Subsequence
+
+Progress: 8 / 180 Days Completed 🚀
+
+Consistency, problem-solving, and continuous improvement.

@@ -632,3 +632,88 @@ I understood how maintaining two minimum values helps identify a valid increasin
 Progress: 8 / 180 Days Completed 🚀
 
 Consistency, problem-solving, and continuous improvement.
+
+
+
+# Day 9 – String Compression
+
+## Problem Details
+- **Platform:** LeetCode
+- **Problem Number:** 443
+- **Problem Name:** String Compression
+- **Difficulty:** Medium
+- **Topics:** Strings, Arrays, Two Pointers
+- **Language:** C++
+
+## Problem Link
+[LeetCode – String Compression](https://leetcode.com/problems/string-compression/)
+
+## Problem Understanding
+
+Given an array of characters, compress consecutive repeated characters.
+
+- Write each character once.
+- If it appears more than once consecutively, write its frequency after the character.
+- Modify the original array in-place.
+- Return the length of the compressed result.
+
+## Approach: Two Pointers
+
+1. Initialise a reading pointer `i` and writing pointer `write`.
+2. Traverse the array using the reading pointer.
+3. Store the current character.
+4. Count its consecutive occurrences.
+5. Write the character at the writing position.
+6. If the count is greater than one, convert it into a string and write each digit.
+7. Return the writing pointer as the compressed length.
+
+## Example
+
+**Input:**
+```cpp
+['a','a','b','b','c','c','c']
+```
+
+**Output:**
+```cpp
+['a','2','b','2','c','3']
+```
+
+**Compressed length:** 6
+
+## Important Concepts Learned
+
+- Two Pointers technique
+- In-place array modification
+- Consecutive character counting
+- Frequency counting
+- `to_string()` function
+- String traversal
+- Time and space complexity
+
+## Complexity Analysis
+
+- Time Complexity: O(n)
+- Auxiliary Space Complexity: O(1)
+
+## Key Learning
+
+Today I learned how to compress consecutive repeated characters using two pointers.
+
+I understood the difference between the reading pointer and writing pointer, how to count repeated characters, and how to convert an integer frequency into individual characters.
+
+## 180-Day DSA Challenge Progress
+
+- Day 1: Merge Strings Alternately
+- Day 2: Greatest Common Divisor of Strings
+- Day 3: Kids With the Greatest Number of Candies
+- Day 4: Can Place Flowers
+- Day 5: Reverse Vowels of a String
+- Day 6: Reverse Words in a String
+- Day 7: Product of Array Except Self
+- Day 8: Increasing Triplet Subsequence
+- Day 9: String Compression
+
+**Progress: 9 / 180 Days Completed 🚀**
+
+Learning the logic, writing my own code, and improving every day.

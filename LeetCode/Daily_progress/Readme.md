@@ -717,3 +717,176 @@ I understood the difference between the reading pointer and writing pointer, how
 **Progress: 9 / 180 Days Completed 🚀**
 
 Learning the logic, writing my own code, and improving every day.
+
+
+Day 10 -- LeetCode 283: Move Zeroes
+Study plan: LeetCode 75
+Topic: Array / Two Pointers
+Difficulty: Easy
+Language: C++
+1. Problem statement
+Given an integer array nums, move all 0s to the end of the array
+while maintaining the relative order of the non-zero elements.
+
+You must modify the original array in-place. Do not make a copy of
+the array.
+What the question means
+1. Every non-zero number must appear before every zero.
+2. The non-zero numbers must keep their original order.
+3. The original nums array must be changed directly.
+4. The function does not need to return an array. LeetCode checks the
+   modified array.
+Example 1
+Input
+nums = {0, 1, 0, 3, 12};
+Expected array after the function runs
+{1, 3, 12, 0, 0}
+The non-zero numbers were 1, 3, 12, and their order stays the same.
+Other useful cases
+  Input               Array after moving zeroes
+  {0}               {0}
+{1, 2, 3}         {1, 2, 3}
+{0, 0, 5}         {5, 0, 0}
+{4, 0, 5, 0, 2}   {4, 5, 2, 0, 0}
+2. Understand the Two Pointers idea
+We use two index variables for two different jobs:
+- i scans the array from left to right.
+- position marks the next index where a non-zero number should be
+  placed.
+Think of position as the next available place in the front section of
+the array.
+
+Initially:
+int position = 0;
+Why zero? Because the first non-zero number we find should be placed at
+the beginning of the array.
+
+As we scan:
+- If nums[i] is zero, skip it. Do not move position.
+- If nums[i] is non-zero, swap it with nums[position], then
+  increase position.
+This gradually collects all non-zero values at the front, in their
+original order. The zeroes are left behind at the end.
+3. Dry run: step by step
+Start with:
+nums = {0, 1, 0, 3, 12};
+position = 0;
+`i`   `nums[i]` What happens                Array after action     `position`
+
+  0           0 Zero: skip                  `{0, 1, 0, 3, 12}`              0
+  1           1 Swap index 1 with index 0   `{1, 0, 0, 3, 12}`              1
+  2           0 Zero: skip                  `{1, 0, 0, 3, 12}`              1
+  3           3 Swap index 3 with index 1   `{1, 3, 0, 0, 12}`              2
+  4          12 Swap index 4 with index 2   `{1, 3, 12, 0, 0}`              3
+Final array:
+{1, 3, 12, 0, 0}
+The key observation
+position only increases when a non-zero number is found.
+
+It does not increase when we see zero. This is what allows the next
+non-zero number to fill the earliest zero position.
+4. C++ solution
+This is the code to enter in the LeetCode editor shown in the
+screenshot:
+class Solution {
+public:
+    void moveZeroes(vector<int>& nums) {
+        int position = 0;
+
+        for (int i = 0; i < nums.size(); i++) {
+            if (nums[i] != 0) {
+                swap(nums[position], nums[i]);
+                position++;
+            }
+        }
+    }
+};
+If your editor does not already include the standard headers, vector
+and swap are commonly provided by:
+#include <vector>
+#include <algorithm>
+using namespace std;
+LeetCode generally provides the required environment, so use the class
+and function template it gives you.
+5. Explain every line
+Function signature
+void moveZeroes(vector<int>& nums)
+- void: The function does not return a value.
+- vector<int>: The input is a vector of integers.
+- &: Pass by reference, so changes affect the original vector.
+- nums: The name of the input vector.
+Position variable
+int position = 0;
+Stores the next index for a non-zero element.
+Loop
+for (int i = 0; i < nums.size(); i++)
+Visits every element once. i is the scanning pointer.
+Condition
+if (nums[i] != 0)
+Only non-zero elements need to be moved to the front.
+Swap
+swap(nums[position], nums[i]);
+Places the current non-zero element into the next available front
+position. The value at that front position is moved to index i.
+
+When i == position, this swaps an element with itself, which is safe.
+Advance the placement pointer
+position++;
+The next non-zero element should go in the next position.
+6. Why does this work?
+At any point in the loop, the section before position contains the
+non-zero elements we have found so far, in their original relative
+order.
+
+When we find another non-zero value at index i, we put it at
+position, immediately after the non-zero values already collected.
+Then we increase position.
+
+At the end:
+- The front section contains every non-zero element in original order.
+- All remaining positions contain zeroes.
+The loop does not need a separate step to fill zeroes. The swaps
+naturally leave them in the remaining positions.
+7. Complexity analysis
+Let n be the number of elements in nums.
+- Time complexity: O(n) -- the loop scans the vector once. Each
+  iteration does constant-time work.
+- Auxiliary space complexity: O(1) -- only the two integer
+  indices are used; no second array is created.
+This satisfies the in-place requirement.
+8. Common mistakes
+1. Increasing position for every element: Wrong. Increase it only
+   when a non-zero element is found.
+2. Using && or an unnecessary second loop: A single scan is
+   enough for this approach.
+3. Sorting the vector: Sorting can change the relative order of
+   non-zero elements.
+4. Creating a second vector: The question explicitly requires
+   in-place modification.
+5. Returning nums: The required function returns void; modify
+   the vector through its reference.
+9. Practice before looking at the solution
+Try this input by hand:
+nums = {0, 5, 0, 2, 0, 8, 9};
+Expected final vector:
+{5, 2, 8, 9, 0, 0, 0}
+Answer these questions in your own words:
+1. What is the job of i?
+2. What is the job of position?
+3. Why does position stay unchanged when nums[i] == 0?
+4. Why do we preserve the order of non-zero elements?
+5. Why is the space complexity O(1)?
+10. Day 10 takeaways
+- A Two Pointers solution can use two indices for different
+  responsibilities.
+- One pointer scans; the other tracks where to place a value.
+- Understand what each pointer represents before writing the loop.
+- In-place means modifying the original data structure rather than
+  creating a copy.
+- Do a dry run to check how indices and array values change.
+Core logic to remember:
+Scan every element. When it is non-zero, swap it into the next
+available front position and advance that position.
+
+Do not memorize the code. Understand why position moves only for
+non-zero values.

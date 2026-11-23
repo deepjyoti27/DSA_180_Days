@@ -890,3 +890,135 @@ available front position and advance that position.
 
 Do not memorize the code. Understand why position moves only for
 non-zero values.
+
+
+
+
+
+Day 11 – Is Subsequence
+
+Problem Details
+
+- Platform: LeetCode
+- Problem Number: 392
+- Problem Name: Is Subsequence
+- Difficulty: Easy
+- Topics: Two Pointers, Strings
+- Language: C++
+
+Problem Link
+
+LeetCode – Is Subsequence
+https://leetcode.com/problems/is-subsequence/
+
+Problem Understanding
+
+Given two strings "s" and "t", return true if "s" is a subsequence of "t". Otherwise, return false.
+
+A subsequence is a string that can be formed by deleting zero or more characters from another string without changing the relative order of the remaining characters.
+
+The solution checks whether every character of "s" can be found in "t" in the same order. Characters may be skipped in "t", but the order of the characters in "s" must be maintained.
+
+Approach: Two Pointers
+
+I solved this problem using two pointers and one traversal of string "t".
+
+Pointer "i" tracks the current character in string "s".
+Pointer "j" traverses string "t" to search for the required characters.
+
+1. Initialise "i = 0" and "j = 0".
+2. Traverse string "t" while "j" is less than the length of "t".
+3. Check whether "i" is less than the length of "s" and whether "s[i]" is equal to "t[j]".
+4. If the characters match, increment "i" because one character of "s" has been found.
+5. Increment "j" in every iteration to continue scanning string "t".
+6. After the traversal, check whether "i" is equal to the length of "s".
+7. If they are equal, all characters of "s" were found in the correct order, so return true. Otherwise, return false.
+
+C++ Code
+
+class Solution {
+public:
+    bool isSubsequence(string s, string t) {
+        int i = 0;
+        int j = 0;
+
+        while (j < t.size()) {
+            if (i < s.size() && s[i] == t[j]) {
+                i++;
+            }
+
+            j++;
+        }
+
+        return i == s.size();
+    }
+};
+
+Example 1
+
+Input:
+s = "abc"
+t = "ahbgdc"
+
+Output:
+true
+
+Explanation:
+- Match 'a' with the first character of "t".
+- Skip 'h' and find 'b'.
+- Skip 'g' and 'd', then find 'c'.
+- All characters of "s" are found in the correct order.
+
+Example 2
+
+Input:
+s = "axc"
+t = "ahbgdc"
+
+Output:
+false
+
+Explanation:
+- The character 'a' is found.
+- The next required character is 'x'.
+- The remaining part of "t" does not contain 'x'.
+- Therefore, "s" is not a subsequence of "t".
+
+Important Concepts Learned
+
+- Two Pointers technique
+- String traversal
+- Character comparison
+- Maintaining relative order
+- Skipping characters while searching
+- Using a condition to avoid out-of-range access
+- Understanding subsequences
+- Time and space complexity
+
+Complexity Analysis
+
+- Time Complexity: O(n), where n is the length of string "t", because the second string is traversed once.
+- Auxiliary Space Complexity: O(1), because only two pointer variables are used and no additional array or string is created.
+
+Key Learning
+
+Today I learned how to use the Two Pointers technique to check whether one string is a subsequence of another.
+
+I understood that pointer "i" moves only when a matching character is found, while pointer "j" moves through string "t" in every iteration.
+
+This ensures that characters are matched in the correct order without using extra space.
+
+180-Day DSA Challenge Progress
+
+- Day 1: Merge Strings Alternately
+- Day 2: Greatest Common Divisor of Strings
+- Day 3: Kids With the Greatest Number of Candies
+- Day 4: Can Place Flowers
+- Day 5: Reverse Vowels of a String
+- Day 6: Reverse Words in a String
+- Day 7: Product of Array Except Self
+- Day 11: Is Subsequence
+
+Progress: 11 / 180 Days Completed
+
+Building strong fundamentals through consistent practice.

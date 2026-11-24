@@ -1022,3 +1022,153 @@ This ensures that characters are matched in the correct order without using extr
 Progress: 11 / 180 Days Completed
 
 Building strong fundamentals through consistent practice.
+
+Day 12 – Container With Most Water
+
+Problem Details
+
+- Platform: LeetCode
+- Problem Number: 11
+- Problem Name: Container With Most Water
+- Difficulty: Medium
+- Topics: Arrays, Two Pointers, Greedy
+- Language: C++
+
+Problem Link
+
+LeetCode – Container With Most Water
+https://leetcode.com/problems/container-with-most-water/
+
+Problem Understanding
+
+Given an integer array "height", find two lines that, together with the x-axis, can form a container that holds the maximum amount of water.
+
+Each element represents the height of a vertical line, and its index represents its position.
+
+The amount of water depends on the distance between the two selected lines and the height of the shorter line.
+
+The solution must find the maximum possible area.
+
+Approach: Two Pointers
+
+I solved this problem using the Two Pointers technique.
+
+I used two pointers:
+
+- "left" starts from the beginning of the array.
+- "right" starts from the end of the array.
+
+I also used a variable "maxArea" to store the maximum water area.
+
+The logic works as follows:
+
+1. Initialise "left = 0".
+2. Initialise "right = height.size() - 1".
+3. Initialise "maxArea = 0".
+4. Run a loop while "left < right".
+5. Calculate the width using "right - left".
+6. Find the smaller height using "min(height[left], height[right])".
+7. Calculate the current area by multiplying width and the smaller height.
+8. Update "maxArea" if the current area is greater.
+9. If the left height is smaller than the right height, increment "left".
+10. Otherwise, decrement "right".
+11. Continue until both pointers meet.
+12. Return "maxArea".
+
+C++ Code
+
+class Solution {
+public:
+    int maxArea(vector<int>& height) {
+
+        int left = 0;
+        int right = height.size() - 1;
+
+        int maxArea = 0;
+
+        while (left < right) {
+
+            int width = right - left;
+
+            int h = min(height[left], height[right]);
+
+            int area = width * h;
+
+            maxArea = max(maxArea, area);
+
+            if (height[left] < height[right]) {
+                left++;
+            }
+            else {
+                right--;
+            }
+        }
+
+        return maxArea;
+    }
+};
+
+Example
+
+Input:
+
+height = [1, 8, 6, 2, 5, 4, 8, 3, 7]
+
+Output:
+
+49
+
+Explanation:
+
+- Initially, left = 0 and right = 8.
+- Calculate the width and smaller height.
+- Area = 8 * min(1, 7) = 8.
+- Move the left pointer because its height is smaller.
+- Continue calculating the area and moving the pointer with the smaller height.
+- When left = 1 and right = 8, the area becomes 7 * min(8, 7) = 49.
+- The maximum area found is 49.
+
+Important Concepts Learned
+
+- Two Pointers technique
+- Array traversal
+- Finding maximum area
+- Width and height calculation
+- Using the minimum of two heights
+- Greedy approach
+- Pointer movement
+- Optimizing brute force solutions
+- Time and space complexity
+
+Complexity Analysis
+
+- Brute Force Time Complexity: O(n²), because every possible pair of lines is checked.
+- Optimized Time Complexity: O(n), because both pointers move towards each other and each position is visited at most once.
+- Auxiliary Space Complexity: O(1), because only a few variables are used and no additional array is created.
+
+Key Learning
+
+Today I learned how to solve the Container With Most Water problem using the Two Pointers technique.
+
+I understood that the amount of water depends on the width between two lines and the height of the shorter line.
+
+I also learned why moving the pointer with the smaller height helps us eliminate pairs that cannot improve the current area.
+
+This problem improved my understanding of Two Pointers, greedy thinking, mathematical calculations, and optimization from O(n²) to O(n).
+
+180-Day DSA Challenge Progress
+
+- Day 1: Merge Strings Alternately
+- Day 2: Greatest Common Divisor of Strings
+- Day 3: Kids With the Greatest Number of Candies
+- Day 4: Can Place Flowers
+- Day 5: Reverse Vowels of a String
+- Day 6: Reverse Words in a String
+- Day 7: Product of Array Except Self
+- Day 10: Move Zeroes
+- Day 11: Is Subsequence
+- Day 12: Container With Most Water
+
+Progress: 12 / 180 Days Completed 🚀
+
+Building strong fundamentals through consistent practice.

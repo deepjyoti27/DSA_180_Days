@@ -1172,3 +1172,179 @@ This problem improved my understanding of Two Pointers, greedy thinking, mathema
 Progress: 12 / 180 Days Completed 🚀
 
 Building strong fundamentals through consistent practice.
+
+
+# Day 13 – Max Number of K-Sum Pairs 🔢
+
+## Problem Details
+
+**Platform:** LeetCode
+
+**Problem Number:** 1679
+
+**Problem Name:** Max Number of K-Sum Pairs
+
+**Difficulty:** Medium
+
+**Topic:** Array, Hash Map, Two Pointers
+
+**Language:** C++
+
+---
+
+## Problem Link
+
+**LeetCode – Max Number of K-Sum Pairs**
+
+https://leetcode.com/problems/max-number-of-k-sum-pairs/
+
+---
+
+## Problem Understanding
+
+You are given:
+
+- An integer array `nums`
+- An integer `k`
+
+In one operation, you can select two numbers whose sum equals `k` and remove them from the array.
+
+The goal is to find the **maximum number of operations** that can be performed.
+
+### Example
+
+```text
+nums = [1,2,3,4]
+k = 5
+
+1 + 4 = 5
+2 + 3 = 5
+
+Answer = 2
+```
+
+---
+
+## Approach: Hash Map
+
+Instead of checking every possible pair using nested loops, we use a Hash Map to store frequencies of numbers.
+
+For each number:
+
+1. Find the number needed to make the sum equal to `k`.
+2. Check whether that required number is already available.
+3. If available, form a pair and increase the operation count.
+4. Otherwise, store the current number for future pairing.
+
+### Logic
+
+If the current number is:
+
+```text
+num
+```
+
+then the required complement is:
+
+```text
+k - num
+```
+
+Example:
+
+```text
+k = 6
+num = 2
+
+Required = 6 - 2 = 4
+```
+
+If `4` is available, we can form a valid pair.
+
+---
+
+## Important Concepts Learned
+
+- Hash Map (`unordered_map`)
+- Frequency counting
+- Complement technique (`k - num`)
+- Greedy pairing
+- Array traversal
+- Efficient O(1) lookup
+- Optimization from O(n²) to O(n)
+
+---
+
+## Complexity Analysis
+
+### Time Complexity
+
+**O(n)**
+
+The array is traversed only once.
+
+### Space Complexity
+
+**O(n)**
+
+The Hash Map may store up to `n` elements.
+
+---
+
+## Key Learning
+
+Today I learned how to solve pair-sum problems efficiently using a Hash Map. Instead of comparing every pair, I used the complement technique (`k - num`) to instantly check if a matching number already exists. This reduced the complexity from O(n²) to O(n), which is much better for large inputs.
+
+---
+
+## Interview Pattern Learned
+
+Whenever a problem contains:
+
+- Pair Sum
+- Two Numbers
+- Target Sum
+- Complement
+- Maximum Number of Pairs
+
+Think about:
+
+```text
+Hash Map + Frequency Count
+```
+
+This is one of the most common interview patterns.
+
+---
+
+## 180-Day Challenge Progress
+
+✅ Day 1: Merge Strings Alternately
+
+✅ Day 2: Greatest Common Divisor of Strings
+
+✅ Day 3: Kids With the Greatest Number of Candies
+
+✅ Day 4: Can Place Flowers
+
+✅ Day 5: Reverse Vowels of a String
+
+✅ Day 6: Reverse Words in a String
+
+✅ Day 7: Product of Array Except Self
+
+✅ Day 8: Increasing Triplet Subsequence
+
+✅ Day 9: String Compression
+
+✅ Day 10: Move Zeroes
+
+✅ Day 11: Is Subsequence
+
+✅ Day 12: Container With Most Water
+
+✅ Day 13: Max Number of K-Sum Pairs
+
+### Progress: 13 / 180 Days Completed 🚀
+
+**Consistency, logic building, and problem-solving — one day at a time.**

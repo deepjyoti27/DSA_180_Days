@@ -1348,3 +1348,269 @@ This is one of the most common interview patterns.
 ### Progress: 13 / 180 Days Completed 🚀
 
 **Consistency, logic building, and problem-solving — one day at a time.**
+
+
+# Day 14 – Maximum Average Subarray I 📊
+
+## Problem Details
+
+**Platform:** LeetCode
+
+**Problem Number:** 643
+
+**Problem Name:** Maximum Average Subarray I
+
+**Difficulty:** Easy
+
+**Topic:** Array, Sliding Window
+
+**Language:** C++
+
+---
+
+## Problem Link
+
+**LeetCode – Maximum Average Subarray I**
+
+https://leetcode.com/problems/maximum-average-subarray-i/ 【1-29a0c0】
+
+---
+
+## Problem Understanding
+
+You are given:
+
+- An integer array `nums`
+- An integer `k`
+
+You need to find the **contiguous subarray** of length `k` that has the **maximum average value** and return that average. 【1-29a0c0】
+
+### Example
+
+```text
+nums = [1,12,-5,-6,50,3]
+k = 4
+
+Subarrays of length 4:
+
+[1,12,-5,-6] → sum = 2
+[12,-5,-6,50] → sum = 51
+[-5,-6,50,3] → sum = 42
+
+Maximum sum = 51
+
+Average = 51/4 = 12.75
+```
+
+Answer:
+
+```text
+12.75
+```
+
+---
+
+## Approach: Sliding Window
+
+A brute-force solution would calculate the sum of every subarray of size `k`, resulting in unnecessary repeated work.
+
+Instead, we use the **Sliding Window** technique.
+
+### Idea
+
+1. Calculate the sum of the first `k` elements.
+2. Store it as the current maximum sum.
+3. Move the window one step to the right:
+   - Add the new element entering the window.
+   - Remove the element leaving the window.
+4. Update the maximum sum if needed.
+5. At the end, return:
+
+```text
+Maximum Sum / k
+```
+
+---
+
+## Logic
+
+### First Window
+
+```text
+[1,12,-5,-6]
+```
+
+Sum:
+
+```text
+2
+```
+
+Current Max Sum:
+
+```text
+2
+```
+
+---
+
+### Slide Window
+
+Move one step right:
+
+```text
+[12,-5,-6,50]
+```
+
+Instead of calculating again:
+
+```text
+New Sum = Previous Sum
+          - Removed Element
+          + Added Element
+```
+
+```text
+2 - 1 + 50 = 51
+```
+
+Update:
+
+```text
+Max Sum = 51
+```
+
+---
+
+### Slide Again
+
+```text
+[-5,-6,50,3]
+```
+
+```text
+51 - 12 + 3 = 42
+```
+
+Maximum remains:
+
+```text
+51
+```
+
+---
+
+## C++ Solution
+
+```cpp
+class Solution {
+public:
+    double findMaxAverage(vector<int>& nums, int k) {
+        long long sum = 0;
+
+        for (int i = 0; i < k; i++)
+            sum += nums[i];
+
+        long long maxSum = sum;
+
+        for (int i = k; i < nums.size(); i++) {
+            sum += nums[i] - nums[i - k];
+            maxSum = max(maxSum, sum);
+        }
+
+        return (double)maxSum / k;
+    }
+};
+```
+
+---
+
+## Important Concepts Learned
+
+- Sliding Window Technique
+- Fixed-size window problems
+- Efficient sum updates
+- Array traversal
+- Maximizing a value while scanning
+- Time optimization from O(n × k) to O(n)
+
+---
+
+## Complexity Analysis
+
+### Time Complexity
+
+```text
+O(n)
+```
+
+Each element is processed only once.
+
+### Space Complexity
+
+```text
+O(1)
+```
+
+Only a few variables are used.
+
+---
+
+## Key Learning
+
+Today I learned the Sliding Window technique. Instead of recalculating the sum of every subarray, I reused the previous window's sum by removing one element and adding another. This significantly improves efficiency and is a common pattern in interview questions involving contiguous subarrays.
+
+---
+
+## Interview Pattern Learned
+
+Whenever you see:
+
+- Contiguous Subarray
+- Fixed Size `k`
+- Maximum / Minimum Sum
+- Average of Subarrays
+
+Think:
+
+```text
+Sliding Window
+```
+
+This is one of the most important array patterns for technical interviews.
+
+---
+
+## 180-Day Challenge Progress
+
+✅ Day 1: Merge Strings Alternately
+
+✅ Day 2: Greatest Common Divisor of Strings
+
+✅ Day 3: Kids With the Greatest Number of Candies
+
+✅ Day 4: Can Place Flowers
+
+✅ Day 5: Reverse Vowels of a String
+
+✅ Day 6: Reverse Words in a String
+
+✅ Day 7: Product of Array Except Self
+
+✅ Day 8: Increasing Triplet Subsequence
+
+✅ Day 9: String Compression
+
+✅ Day 10: Move Zeroes
+
+✅ Day 11: Is Subsequence
+
+✅ Day 12: Container With Most Water
+
+✅ Day 13: Max Number of K-Sum Pairs
+
+✅ Day 14: Maximum Average Subarray I
+
+### Progress: 14 / 180 Days Completed 🚀
+
+**Every Sliding Window problem you solve today becomes a template for dozens of future interview questions.**

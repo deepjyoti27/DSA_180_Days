@@ -1614,3 +1614,205 @@ This is one of the most important array patterns for technical interviews.
 ### Progress: 14 / 180 Days Completed 🚀
 
 **Every Sliding Window problem you solve today becomes a template for dozens of future interview questions.**
+
+
+
+# Day 15 – Maximum Number of Vowels in a Substring of Given Length 🔤
+
+## Problem Details
+
+**Platform:** LeetCode
+
+**Problem Number:** 1456
+
+**Problem Name:** Maximum Number of Vowels in a Substring of Given Length
+
+**Difficulty:** Medium
+
+**Topic:** String, Sliding Window
+
+**Language:** C++
+
+---
+
+## Problem Link
+
+**LeetCode – Maximum Number of Vowels in a Substring of Given Length**
+
+https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/
+
+---
+
+## Problem Understanding
+
+You are given:
+
+- A string `s`
+- An integer `k`
+
+Your task is to find the **maximum number of vowels** present in any substring of length `k`.
+
+Vowels are:
+
+```text
+a, e, i, o, u
+```
+
+### Example
+
+```text
+Input:
+s = "abciiidef"
+k = 3
+
+Substrings:
+
+abc -> 1 vowel
+bci -> 1 vowel
+cii -> 2 vowels
+iii -> 3 vowels
+iid -> 2 vowels
+ide -> 2 vowels
+def -> 1 vowel
+
+Output:
+3
+```
+
+---
+
+## Approach: Sliding Window
+
+Instead of counting vowels separately for every substring, we use a **Sliding Window** of size `k`.
+
+### Steps
+
+1. Count vowels in the first window of size `k`.
+2. Store this count as the current maximum.
+3. Slide the window one character at a time.
+4. If the new character is a vowel, increase the count.
+5. If the removed character is a vowel, decrease the count.
+6. Update the maximum vowel count after each move.
+
+This avoids recalculating the vowel count for every substring.
+
+---
+
+## Logic
+
+For every window:
+
+```text
+Add incoming character
+Remove outgoing character
+Update answer
+```
+
+Example:
+
+```text
+Window 1: abc
+Vowels = 1
+
+Window 2: bci
+Remove 'a'
+Add 'i'
+
+Vowels = 1
+```
+
+Continue this process until the end of the string.
+
+---
+
+## Important Concepts Learned
+
+- Sliding Window Technique
+- Fixed-size window problems
+- String traversal
+- Vowel checking
+- Efficient count updates
+- Time optimization
+
+---
+
+## Complexity Analysis
+
+### Time Complexity
+
+```text
+O(n)
+```
+
+The string is traversed only once.
+
+### Space Complexity
+
+```text
+O(1)
+```
+
+Only a few variables are used.
+
+---
+
+## Key Learning
+
+Today I learned how to apply the Sliding Window pattern on strings. Instead of counting vowels for every substring individually, I updated the count dynamically by adding the new character entering the window and removing the character leaving the window. This reduced the complexity from O(n × k) to O(n).
+
+---
+
+## Interview Pattern Learned
+
+Whenever you see:
+
+- Fixed-length substring
+- Maximum count
+- Characters in a window
+- Substring of size `k`
+
+Think:
+
+```text
+Sliding Window
+```
+
+This is one of the most common patterns in coding interviews and competitive programming.
+
+---
+
+## 180-Day Challenge Progress
+
+✅ Day 1: Merge Strings Alternately
+
+✅ Day 2: Greatest Common Divisor of Strings
+
+✅ Day 3: Kids With the Greatest Number of Candies
+
+✅ Day 4: Can Place Flowers
+
+✅ Day 5: Reverse Vowels of a String
+
+✅ Day 6: Reverse Words in a String
+
+✅ Day 7: Product of Array Except Self
+
+✅ Day 8: Increasing Triplet Subsequence
+
+✅ Day 9: String Compression
+
+✅ Day 10: Move Zeroes
+
+✅ Day 11: Is Subsequence
+
+✅ Day 12: Container With Most Water
+
+✅ Day 13: Max Number of K-Sum Pairs
+
+✅ Day 14: Maximum Average Subarray I
+
+✅ Day 15: Maximum Number of Vowels in a Substring of Given Length
+
+### Progress: 15 / 180 Days Completed 🚀
+
+**Consistency, logic building, and problem-solving — one day at a time.**
